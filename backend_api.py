@@ -12,6 +12,7 @@ import tempfile
 import re
 from typing import Optional
 
+
 # ----------------------------
 # Load env
 # ----------------------------
@@ -118,11 +119,11 @@ def generate_audio(story_text: str):
                 return f"data:audio/mp3;base64,{base64.b64encode(audio_file.read()).decode('utf-8')}"
 
 @traceable(name="Generate Video")
-def generate_video(theme: str):
+def generate_video(story_text: str):
     try:
         video_bytes = client.text_to_video(
             model="cerspense/zeroscope_v2_576w",
-            prompt=f"A short animated scene about {theme}, child friendly, colorful"
+            prompt=f"A short animated scene about {story_text}, child friendly, colorful"
         )
         if video_bytes and isinstance(video_bytes, (bytes, bytearray)):
             return f"data:video/mp4;base64,{base64.b64encode(video_bytes).decode('utf-8')}"
@@ -130,10 +131,8 @@ def generate_video(theme: str):
         print(f"⚠️ Video generation failed: {e}")
     return None
 
-# ----------------------------
-# Main traceable endpoint
-# ----------------------------
-@traceable(name="Generate Storybook")  # only one execution in LangSmith
+
+@traceable(name="Generate Storybook")  
 @app.post("/generate_story/")
 async def generate_story(req: StoryRequest):
     # All steps are children inside this single trace
@@ -147,7 +146,8 @@ async def generate_story(req: StoryRequest):
     story_text = generate_story_text(req)
     image_url = generate_image(story_text)
     audio_url = generate_audio(story_text)
-    video_url = generate_video(req.theme)
+    #video_url = generate_video(story_text) # huggingface video models are not reliable, so disabled for now
+    # if we use paid api like openai, we can easily genrate video too just required to change the model and calling function
 
     final_story = f"""
 # 📖 Adaptive Storybook: {req.theme.title()}
@@ -159,6 +159,5 @@ async def generate_story(req: StoryRequest):
 ---
 
 🔊 [Listen to narration]({audio_url})
-
 """
     return {"markdown_story": final_story}
