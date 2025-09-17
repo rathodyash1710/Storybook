@@ -38,16 +38,13 @@ It integrates with **LangSmith** for **observability and tracing**.
 
 ## 📂 Project Structure
 ```
-
 .
-├── backend\_api.py   # FastAPI backend with LangSmith tracing
-├── frontend.py      # Streamlit frontend
-├── .env             # Environment variables 
-└── README.md        # Project documentation
-
+├── backend_api.py # FastAPI backend with LangSmith tracing
+├── frontend.py # Streamlit frontend
+├── .env # Environment variables (HF_TOKEN, LANGCHAIN_API_KEY, etc.)
+└── README.md # Project documentation
 ````
 
----
 
 ## ⚙️ Installation
 
