@@ -37,7 +37,7 @@ It integrates with **LangSmith** for **observability and tracing**.
 ---
 
 ## 📂 Project Structure
-```
+```bash
 .
 ├── backend_api.py # FastAPI backend with LangSmith tracing
 ├── frontend.py # Streamlit frontend
