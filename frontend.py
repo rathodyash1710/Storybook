@@ -8,7 +8,6 @@ st.set_page_config(page_title="Storybook Creator", page_icon="📚")
 st.title("📚 Adaptive Storybook Creator")
 
 age = st.number_input("Child's Age", min_value=1, max_value=15)
-print(age)
 reading_level = st.selectbox("Reading Level", ["Beginner", "Intermediate", "Advanced"])
 theme = st.text_input("Favorite Theme (e.g., Space, Animals, Magic)", "Animals")
 gender   = st.selectbox("gender", ["Male", "Female"])
