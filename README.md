@@ -1,8 +1,3 @@
-Perfect 👍 since you’ve integrated **LangSmith** for tracing, let’s update the README to highlight that. I’ll also add setup instructions for **LangSmith API key** and mention how runs show up in the LangSmith dashboard.
-
-Here’s the updated **README.md** 👇
-
----
 
 ```markdown
 # 📚 Adaptive Storybook Creator  
@@ -115,7 +110,7 @@ Frontend will open in your browser: `http://localhost:8501`
 * Each request to `/generate_story/` creates **one main run** in LangSmith.
 * Inside it, you’ll see **child traces**:
 
-  * ✍️ `Generate Story Text`
+  * ✍ `Generate Story Text`
   * 🖼️ `Generate Image`
   * 🔊 `Generate Audio`
   * 🎬 `Generate Video`
