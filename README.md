@@ -44,7 +44,7 @@ It integrates with **LangSmith** for **observability and tracing**.
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/<your-username>/storybook-creator.git
+git clone https://github.com/yashrathod1710/storybook-creator.git
 cd storybook-creator
 ````
 
@@ -119,8 +119,8 @@ Frontend will open in your browser: `http://localhost:8501`
 ---
 
 ## ⚠️ Notes
-* Video generation is **experimental** and may fail if Hugging Face credits are insufficient,so at presente this feture are not provided.
+* Video generation is **experimental** and may fail if Hugging Face credits are insufficient,or may take time for free api services,so at presente this feture are not provided.
 * Audio narration uses **gTTS fallback** if Hugging Face model is unavailable(Refresh Audio Page once if you not found play Butoon).
-* Ensure you have enough Hugging Face **inference credits** for text/image/video generation.
+* Ensure you have enough Hugging Face credits.
 ---
 
