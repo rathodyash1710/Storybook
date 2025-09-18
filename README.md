@@ -44,8 +44,8 @@ It integrates with **LangSmith** for **observability and tracing**.
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/yashrathod1710/storybook-creator.git
-cd storybook-creator
+git clone https://github.com/rathodyash1710/Storybook
+cd Storybook
 ````
 
 ### 2️⃣ Create Virtual Environment
