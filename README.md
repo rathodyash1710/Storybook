@@ -22,11 +22,10 @@ It integrates with **LangSmith** for **observability and tracing**.
   - **Gender** (to personalize characters)  
   - **Optional description** for extra preferences  
 - Markdown formatted storybook with chapters  
-- AI-generated illustrations using Stable Diffusion  
+- AI-generated illustrations using Stable Diffusion(Image from AI)  
 - AI narration with fallback to gTTS (Google Text-to-Speech)  
-- Experimental AI video generation (Zeroscope)  
 - **LangSmith Integration**:
-  - All steps (`text`, `image`, `audio`, `video`) are logged as **child traces** under a single **main run**  
+  - All steps (`text`, `image`, `audio`, `video`) are logged as traces
   - View execution traces, inputs/outputs, and errors in the [LangSmith dashboard](https://smith.langchain.com/)  
 
 ---
@@ -36,7 +35,7 @@ It integrates with **LangSmith** for **observability and tracing**.
 .
 ├── backend_api.py # FastAPI backend with LangSmith tracing
 ├── frontend.py # Streamlit frontend
-├── .env # Environment variables (HF_TOKEN, LANGCHAIN_API_KEY, etc.)
+├── .env # Environment variables 
 └── README.md # Project documentation
 ````
 
@@ -120,8 +119,8 @@ Frontend will open in your browser: `http://localhost:8501`
 ---
 
 ## ⚠️ Notes
-* Video generation is **experimental** and may fail if Hugging Face credits are insufficient.
+* Video generation is **experimental** and may fail if Hugging Face credits are insufficient,so at presente this feture are not provided.
 * Audio narration uses **gTTS fallback** if Hugging Face model is unavailable(Refresh Audio Page once if you not found play Butoon).
-* Ensure you have enough Hugging Face **inference credits** for image/video generation.
+* Ensure you have enough Hugging Face **inference credits** for text/image/video generation.
 ---
 
